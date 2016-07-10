@@ -1,0 +1,5 @@
+# Folders used by  node
+node_modules/
+# Folders used by bower infrastructure
+public/bower_components/
+

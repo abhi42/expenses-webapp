@@ -1,0 +1,106 @@
+table {
+	border: 1px gray;
+	border-style: groove;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+th {
+	height: 25px;
+	background-color: #E6E6FA;
+	color: black;
+	font-family: "Arial", Sans-serif;
+	font-size: 13px;
+}
+
+th, td {
+	border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+tr:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+
+input {
+	border-style: groove;
+	border-color: #ddd;
+}
+
+.number-text {
+	text-align: center;
+}
+
+.desc-text {
+	text-align: left;
+	width: 100%;
+	background-color: #f8f8ff;
+}
+
+th.cat-col {
+	width: 15%;
+}
+
+.cat-text {
+	text-align: center;
+}
+
+th.desc-col {
+	width: 78%;
+}
+
+th.amount-col {
+	width: 7%;
+}
+
+td.total-col {
+	text-align: center;
+	font-family: "Arial", Sans-serif;
+}
+
+p.normal {
+	font-family: "Arial", Sans-serif;
+	font-size: 13px;
+}
+
+p.error {
+	font-family: "Arial", Sans-serif;
+	font-size: 13px;
+	color: #ff0000;
+}
+
+/* for tabs*/
+header#page_header nav ul li{
+	list-style: none;
+}
+
+header#page_header {
+	width: 100%;
+}
+
+a{
+	text-decoration: none;
+	float: left; //to place the tags horizontally in the header
+	height: 20px;
+	line-height: 20px;
+	padding: 0 10px;
+	margin: 0 5px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background-color: #E6E6FA;
+	font-size: 13px;
+	color: #000000;
+	font-family: arial, verdana, sans-serif;
+}
+
+/*a:hover{
+	background-color: #00f0ff;
+}
+*/
+.linkSelected{
+	background-color: #ff8000;
+}

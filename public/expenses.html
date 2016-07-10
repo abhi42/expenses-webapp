@@ -1,0 +1,64 @@
+<html>
+<head>			
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div ng-controller="ExpensesController as model" ng-cloak>
+	
+	<header id="page_header">
+		<nav>
+			<ul id="yr" ng-repeat="m in model.monthsData">
+				<li><a ng-href="#" ng-click="model.getExpensesFromServerForMonth(m.id, m.monthIndex)" ng-model="m.isInFocus" ng-class="{'linkSelected': m.isInFocus}">{{m.name}}</a></li>
+			</ul>
+		</nav>	
+	</header>
+
+	<br/>
+	<p>
+	
+	<div id="msg_div">
+		<p class="error">{{model.userMsg}}</p>
+	</div> 	
+		
+	<div style="overflow-x:auto;">
+		<table>
+			<th class="cat-col">Category</th>
+			<th class="desc-col">Description</th>
+			<th class="amount-col">Amount</th>
+			<tr ng-repeat="entry in model.expensesCategories">
+				<td class="cat-text"><p class="normal">{{entry.category}}</p></td>
+				<td><input class="desc-text" ng-model="entry.desc" ng-blur="model.handleDescFocusLost(entry)" ng-keypress="model.handleKeyPress(entry, $event)"></td>
+				<td><input type="number" class="number-text" ng-model="entry.amount" ng-keyup="model.handleAmountInput(entry)" ng-blur="model.handleAmountFocusLost(entry)" ng-keypress="model.handleKeyPress(entry, $event)"></td>
+			</tr>
+			<tr>
+				<td/>
+				<td/>
+				<td class="number-text" "total-col"><p class="normal">{{model.total | currency : "CHF " : 2}}</p></td>
+				<td/>
+            </tr>
+		</table>
+		<br>
+	</div>
+
+	<br/>
+	<p>
+
+</div>	
+
+<div id="chart_div">
+</div>
+
+	<script src="bower_components/angular/angular.js"></script>	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="expensesController.js"></script>
+	
+	<script type="text/javascript">
+		google.charts.load('current', {packages: ['corechart']});
+		google.charts.setOnLoadCallback(function() {
+			angular.bootstrap(document, ['expensesApp']);
+		});
+	</script>
+
+</body>
+</html>
